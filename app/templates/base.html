@@ -72,7 +72,7 @@
                     <div class="header-left-area d-flex align-items-center">
                         <!-- Start Logo Area -->
                         <div class="logo-area">
-                            <a href="index.html"><img src="{% static 'img/logo.svg' %}" alt="Logo"/></a>
+                            <a href="{% url 'index' %}"><img src="{% static 'img/logo.svg' %}" alt="Logo"/></a>
                         </div>
                         <!-- End Logo Area -->
 
@@ -88,9 +88,9 @@
                         <!-- Start Main Menu -->
                         <nav id="mainmenu-wrap">
                             <ul class="nav mainmenu justify-content-center">
-                                <li><a class="current" href="index.html">Home</a></li>
+                                <li><a class="current" href="{% url 'index' %}">Home</a></li>
                             
-                                <li class="dropdown-show mega-fullwidth"><a href="shop.html">Shop</a>
+                                <li class="dropdown-show mega-fullwidth"><a href="#">Shop</a>
                                     <ul class="mega-menu-wrap dropdown-nav d-flex">
                                         {% for i in cat %}
                                         <li class="mega-menu-item"><a href="{% url 'shop' %}?cid={{i.id}}" class="mega-item-title">{{i.c_name}}</a></li>
@@ -98,7 +98,7 @@
                                         
                                     </ul>
                                 </li>
-                                <li><a href="contact.html">Contact</a></li>
+                                <li><a href="{% url 'contact' %}">Contact</a></li>
                             </ul>
                         </nav>
                         <!-- End Main Menu -->
@@ -117,7 +117,7 @@
                                     {% if request.session.user %}
                                     <li><a href="{% url 'logout' %}">logout</a></li>
                                     <li><a href="{% url 'myaccount' %}">My Account</a></li>
-                                    <li><a href="wishlist.html">Wishlist</a></li>
+                                    <li><a href="#">Wishlist</a></li>
                                     <li><a href="{% url 'myorder' %}">Order History</a></li>
                                     {% else %}
                                     <li><a href="{% url 'signup' %}">Signup</a></li>
@@ -169,7 +169,7 @@
                                 <div class="footer-widget-item-wrap">
                                     <div class="widget-body">
                                         <div class="about-text">
-                                            <a href="index.html"><img src="{% static 'img/logo.svg' %}" alt="Logo"/></a>
+                                            <a href="{% url 'index' %}"><img src="{% static 'img/logo.svg' %}" alt="Logo"/></a>
                                             <p>Pellentesque mollis nec orci id tincidunt. Sed mollis risus eu nisi
                                                 aliquet, sit amet fermentum justo dapibus.</p>
                                         </div>
@@ -224,10 +224,8 @@
                     <div class="footer-menu mb-sm-12">
                         <ul class="nav justify-content-center justify-content-md-start">
                             <li><a href="about.html">About Us</a></li>
-                            <li><a href="#">Jobs</a></li>
-                            <li><a href="#">Press</a></li>
                             <li><a href="contact.html">contact</a></li>
-                            <li><a href="blog.html">Blog</a></li>
+                            
                         </ul>
                     </div>
                 </div>
@@ -270,18 +268,7 @@
 
             
         
-        <div class="minicart-calculation-wrap d-flex justify-content-between align-items-center">
-            <span class="cal-title">Subtotal:</span>
-            <span class="cal-amount">£119.97</span>
-        </div>
-        <div class="minicart-btn-group mt-38">
-            <a href="cart.html" class="btn btn-black ">View Cart</a>
-            <a href="checkout.html" class="btn btn-black mt-10">checkout</a>
-        </div>
-    </div>
-</div>
-<!--== End Mini Cart Wrapper ==-->
-
+        
 <!--== Start Left Offside Menu Wrapper ==-->
 <div class="mfp-hide modalLeftOffside" id="left-offside-popup">
     <div class="leftoffside-content-wrap">
@@ -370,10 +357,10 @@
                                         <input type="text" id="quantity" value="1"/>
                                     </div>
                                     <div class="list-btn-group">
-                                        <a href="cart.html" class="btn btn-black">Add to Cart</a>
-                                        <a href="wishlist.html" data-toggle="tooltip" data-placement="top"
+                                        <a href="{% url 'showcart' %}" class="btn btn-black">Add to Cart</a>
+                                        <a href="#" data-toggle="tooltip" data-placement="top"
                                            title="Add to wishlist"><i class="dl-icon-heart2"></i></a>
-                                        <a href="compare.html" data-toggle="tooltip" data-placement="top"
+                                        <a href="#" data-toggle="tooltip" data-placement="top"
                                            title="Add to Compare"><i class="dl-icon-compare2"></i></a>
                                     </div>
                                 </div>
