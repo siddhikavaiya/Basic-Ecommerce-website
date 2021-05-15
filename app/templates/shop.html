@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block body %}
+    
+
+
+<!--== Start Shop Page Wrapper ==-->
+<div id="shop-page-wrapper" class="pt-86 pt-md-56 pt-sm-46 pb-50 pb-md-20 pb-sm-10">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+
+                <!-- Start Shop Page Product Area -->
+                <div class="shop-page-products-wrapper mt-44 mt-sm-30">
+                    <div class="products-wrapper products-on-column">
+                        <div class="row">
+                            <!-- Start Single Product -->
+                            {% for i in data %}
+                            <div class="col-lg-3 col-sm-6">
+                               
+                                <div class="single-product-wrap">
+                                    <!-- Product Thumbnail -->
+                                    
+                                    
+                                        
+                                    
+                                        
+                                    <figure class="product-thumbnail">
+                                        <a href="{% url 'shopdetail' %}?cid={{i.id}}" class="d-block">
+                                            <img class="primary-thumb" src="{{i.img1.url}}"
+                                                 alt="Product" />
+                                            <img class="secondary-thumb" src="{{i.img2.url}}"
+                                                 alt="Product"/>
+                                        </a>
+                                        <figcaption class="product-hvr-content">
+                                            <a href="{% url 'addtocart' i.id %}" class="btn btn-black btn-addToCart">Add to Cart</a>
+                                            <div class="prod-btn-group">
+                                                <a href="{% url 'shopdetail' %}?cid={{i.id}}" data-toggle="tooltip" data-placement="top"
+                                                   title="View"><i class="dl-icon-view"></i></a>
+                                                <a href="wishlist.html" data-toggle="tooltip" data-placement="top"
+                                                   title="Add to Wishlist"><i class="dl-icon-heart4"></i></a>
+                                            </div>
+                                        </figcaption>
+                                    </figure>
+                                    
+                                    <!-- Product Details -->
+                                    <div class="product-details">
+                                        <h2 class="product-name"><a href="{% url 'shopdetail' %}?cid={{i.id}}">{{i.pname}}</a></h2>
+                                        <div class="product-prices">
+                                            
+                                            <span class="price">&#8377 {{i.price}}</span>
+                                        </div>
+                                        <div class="list-view-content">
+                                            <p class="product-desc">{{i.pdis}}</p>
+
+                                            <div class="list-btn-group mt-30 mt-sm-14">
+                                                <a href="{% url 'addtocart' i.id %}" class="btn btn-black">Add to Cart</a>
+                                                <a href="wishlist.html" data-toggle="tooltip" data-placement="top"
+                                                   title="Add to wishlist"><i class="dl-icon-heart2"></i></a>
+                                                <a href="compare.html" data-toggle="tooltip" data-placement="top"
+                                                   title="Add to Compare"><i class="dl-icon-compare2"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>{% endfor %}
+                            
+                        </div>
+                        
+
+                    </div>
+                </div>
+                <!-- End Shop Page Product Area -->
+
+                
+            </div>
+        </div>
+    </div>
+</div>
+<!--== End Shop Page Wrapper ==-->
+
+{% endblock body %}
+    

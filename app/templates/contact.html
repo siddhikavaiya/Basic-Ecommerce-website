@@ -1,0 +1,112 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block body %}
+
+<!-- Start Page Header Wrapper -->
+<div class="page-header-wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <div class="page-header-content">
+                    <h2>Contact Us</h2>
+                    <nav class="page-breadcrumb">
+                        <ul class="d-flex justify-content-center">
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="shop.html" class="active">Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Page Header Wrapper -->
+
+<!--== Start Contact Page Wrapper ==-->
+<div id="contact-page-wrapper" class="pt-90 pt-md-60 pt-sm-50 pb-50 pb-md-20 pb-sm-10">
+    <div class="contact-page-top-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7 col-md-6">
+                    <div class="contact-page-form-wrap contact-method">
+                        <h3>Get in touch</h3>
+
+                        <div class="contact-form-wrap">
+                            <form action="http://whizthemes.com/mail-php/raju/veera/mail.php" method="post"
+                                  id="contact-form">
+                                <div class="single-input-item">
+                                    <input type="text" name="first_name" placeholder="Your Name *" required/>
+                                </div>
+
+                                <div class="single-input-item">
+                                    <input type="email" name="email_address" placeholder="Email address *" required/>
+                                </div>
+
+                                <div class="single-input-item">
+                                    <input type="text" name="phone_no" placeholder="Your Phone *" required/>
+                                </div>
+
+                                <div class="single-input-item">
+                                    <textarea name="con_message" id="con_message" cols="30" rows="7"
+                                              placeholder="Message *" required></textarea>
+                                </div>
+
+                                <button class="btn btn-black">Send Message</button>
+
+                                <div class="form-message"></div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-5 col-md-6 mt-sm-50">
+                    <div class="contact-info-wrapper contact-method">
+                        <h3>Contact Info</h3>
+
+                        <div class="contact-info-content">
+                            <div class="single-contact-info">
+                                <h4>Postal Address</h4>
+                                <p>PO Box 16122 Collins Street West
+                                    <br> Victoria 8007 Australia</p>
+                            </div>
+
+                            <div class="single-contact-info">
+                                <h4>Veera HQ</h4>
+                                <p>PO Box 16122 Collins Street West
+                                    <br> Victoria 8007 Australia</p>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="single-contact-info">
+                                        <h4>Business Phone</h4>
+                                        <p>+61 3 8376 6284</p>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-6">
+                                    <div class="single-contact-info mb-0">
+                                        <h4>Say Hello</h4>
+                                        <p>your@example.com</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="contact-page-map-area mt-90 mt-md-60 mt-sm-50">
+        <div class="map-area-wrapper">
+            <div id="map_content" data-lat="-37.8182894" data-lng="144.9544873" data-zoom="4" data-maptitle="Veera HQ"
+                 data-mapaddress="PO Box 16122 Collins Street West <br> Victoria 8007 Australia">
+            </div>
+        </div>
+    </div>
+</div>
+<!--== End Contact Page Wrapper ==-->
+
+{% endblock %}

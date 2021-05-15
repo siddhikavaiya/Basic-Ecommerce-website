@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+{% load static %}
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+
+{% block body %}
+<br>
+<br>
+<br>
+<br>
+
+<br><center>
+
+  
+    <div class="form-group col-md-4" style="background-color:rgb(255, 252, 232);">
+        <br>
+        <br>
+  
+      <div class="title-left">
+        
+          <h3>Create New Account</h3>
+      </div>
+
+      
+      <form method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+      <br>
+              <div class="form-group col-md-7" >
+                  
+                  <input type="text" style="font-size: medium;" class="form-control" name="fname" placeholder="First Name"> </div>
+              <br>
+              <div class="form-group col-md-7" >
+                  
+                  <input type="text" style="font-size: medium;" class="form-control" name="lname" placeholder="Last Name"> </div>
+              <br>
+              <div class="form-group col-md-7" >
+                  
+                <input type="text" style="font-size: medium;" class="form-control" name="username" placeholder="Username"> </div>
+            <br>
+            <div class="form-group col-md-7" >
+                  
+              <input type="date" style="font-size: medium;" class="form-control" name="dob" placeholder="your birth date"> </div>
+          <br>
+              <div class="form-group col-md-7">
+                
+                  <input type="email" style="font-size: medium;" class="form-control" name="email" placeholder="Enter Email"> </div>
+                  <br>
+                <div class="form-group col-md-7">
+                
+                    <input type="number" style="font-size: medium;" class="form-control" name="phone" placeholder="Enter Mobile Number"> </div>
+                    <br>
+                    <div class="form-group col-md-7">
+                
+                        <input type="text" style="font-size: medium;" class="form-control" name="address" placeholder="Enter your address"> </div>
+                        <br>
+              <div class="form-group col-md-7">
+                  
+                  <input type="password" style="font-size: medium;" class="form-control" name="password" placeholder="Password"> </div>
+                  <br>
+                  <div class="form-group col-md-7 ">
+                    
+                    <input type="file" name="image" class="form-control-file" id="exampleFormControlFile1">
+                  </div>
+          <input type="submit" class="btn hvr-hover" value="Register" style="background: rgb(20, 14, 14); color: aliceblue;">
+            <br>
+            <br>
+      
+        </form>
+        {% if error_uname %}
+            <div class="alert alert-danger" role="alert">
+                {{error_uname}}
+              </div>
+            {% endif %}
+  </div>
+</div>
+</div>
+</div>
+</div>
+</center>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+{% endblock body %}
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

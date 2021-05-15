@@ -1,0 +1,98 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block body %}
+
+<!--== Start Cart Page Wrapper ==-->
+<div id="cart-page-wrapper" class="pt-86 pt-md-56 pt-sm-46 pb-50 pb-md-20 pb-sm-10">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="shopping-cart-list-area">
+                    <div class="shopping-cart-table table-responsive">
+                        <table class="table table-bordered text-center">
+                            <thead>
+                            <tr>
+                                <th>Products</th>
+                                <th>Price</th>
+                                <th>Quantity</th>
+                                <th>Total</th>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            <tr>
+                                
+                                {% for i in Cart %}
+                                    
+                                <td class="product-list">
+                                    <div class="cart-product-item d-flex align-items-center">
+                                        <div class="remove-icon">
+                                            <button><a href="{% url 'remove' i.id %}"><i class="fa fa-trash-o"></i></a></button>
+                                        </div>
+                                        <a href="single-product-sticky.html" class="product-thumb">
+                                            <img src="{{i.prod.img1.url}}" alt="Product"/>
+                                        </a>
+                                        <a href="single-product-tab-left.html" class="product-name">{{i.prod.pname}}</a>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="price">{{i.prod.price}}</span>
+                                </td>
+                                
+                                    <td class="cart_quantity">
+                                        <a class="cart_quantity_up" href="{% url 'plus' i.id %}"> + </a>
+                                        <input type="text" value="{{i.quantity}}" size="4">
+                                        <a class="cart_quantity_down" href="{% url 'minus' i.id %}"> - </a>
+
+                                
+                                <td>
+                                    <span class="price">{{i.subtotle}}</span>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                           
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <!-- Cart Calculate Area -->
+                <div class="cart-calculate-area mt-sm-30 mt-md-30">
+                    <h5 class="cal-title">Cart Totals</h5>
+
+                    <div class="cart-cal-table table-responsive">
+                        <table class="table table-borderless">
+                            <tr class="cart-sub-total">
+                                <th>Subtotal</th>
+                                <td>{{subtotle}}</td>
+                            </tr>
+                            <tr class="cart-sub-total">
+                                <th>Tax   30%</th>
+                                <td>{{x}}</td>
+                            </tr>
+                            <tr class="cart-sub-total">
+                                <th>Free Delivery</th>
+                                <td>0</td>
+                            </tr>
+
+                            <tr class="order-total">
+                                <th>Total</th>
+                                <td>{{adc}}</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div class="proceed-checkout-btn">
+                        <a href="{% url 'checkout' %}" class="btn btn-full btn-black">Proceed to Checkout</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--== End Cart Page Wrapper ==-->
+
+{% endblock body %}

@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block body %}
+    
+    
+
+
+<!--== Start Wishlist Page Wrapper ==-->
+<div id="wishlist-page-wrapper" class="pt-90 pt-md-60 pt-sm-50 pb-40 pb-md-10 pb-sm-10">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="shopping-cart-list-area">
+                    <div class="shopping-cart-table table-responsive">
+                        <table class="table table-bordered text-center">
+                            <thead>
+                            <tr>
+                                <th>Products</th>
+                                <th>Quantity</th>
+                                <th>Price</th>
+                                
+                                <th>Status</th>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            <tr>
+                                
+                                {% for i in data %}
+                                    
+                                
+                                    
+                                <td class="product-list">
+                                    <div class="cart-product-item d-flex align-items-center">
+                                        <a class="product-thumb">
+                                            <img src="{{i.cart.prod.img1.url}}" alt="Product"/>
+                                        </a>
+                                        <a  class="product-name">{{i.cart.prod.pname}}</a>
+                                    </div>
+                                </td>
+                                <td>{{i.cart.quantity}}</td>
+                                <td>
+                                    <span class="price">{{i.cart.subtotle}}</span>
+                                </td>
+                                
+                                <td>
+                                    {{i.order_status}}
+                                    
+                                    {% if i.order_status == 'Pending' %}
+                                    <div class="progress">
+                                        <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 25%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    {% elif i.order_status == 'Accepted' %}
+                                    <div class="progress">
+                                        <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 50%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    {% elif i.order_status == 'Out for Delivery' %}
+                                    <div class="progress">
+                                        <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 75%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    {% elif i.order_status == 'Delivered' %}
+                                    <div class="progress">
+                                        <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 100%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                      </div>
+
+                                    {% endif %}
+                                </td>
+                            </tr>
+                            {% endfor %}
+
+                            
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock body %}

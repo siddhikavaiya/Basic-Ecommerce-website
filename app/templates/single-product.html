@@ -1,0 +1,207 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block body %}
+
+<!--== Start Single Product Page Wrapper ==-->
+<div id="single-product-page" class="pt-90 pt-md-60 pt-sm-50 pb-92 pb-md-58 pb-sm-50">
+    <div class="container-fluid">
+        <div class="row">
+            
+           
+            
+                
+            <!-- Start Single Product Thumbnail -->
+            <div class="col-xl-7 col-lg-6">
+                
+                
+                    
+                
+                    
+                <div class="single-product-thumb-wrap p-0 pb-sm-30 pb-md-30">
+                    <!-- Product Thumbnail Large View -->
+                    <div class="product-thumb-large-view">
+                        <div class="product-thumb-carousel">
+                            <figure class="product-thumb-item">
+                                <img src="{{data.img1.url}}" alt="Single Product"/>
+                            </figure>
+                            <figure class="product-thumb-item">
+                                <img src="{{data.img2.url}}" alt="Single Product"/>
+                            </figure>
+                            
+                        </div>
+
+                        <!-- Product Thumb Button  -->
+                        <div class="product-thumb-btns">
+                            <button class="btn-zoom-popup"><i class="dl-icon-zoom-in"></i></button>
+                            <a href="https://player.vimeo.com/video/225547551?autoplay=1&amp;title=0&amp;byline=0&amp;portrait=0"
+                               class="btn-video-popup"><i class="dl-icon-format-video"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Product Thumbnail Nav -->
+                    <div class="product-thumbnail-nav">
+                        <figure class="product-thumb-item">
+                            <img src="{{data.img1.url}}" alt="Single Product"/>
+                        </figure>
+                        <figure class="product-thumb-item">
+                            <img src="{{data.img2.url}}" alt="Single Product"/>
+                        </figure>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <!-- End Single Product Thumbnail -->
+
+            <!-- Start Single Product Content -->
+            <div class="col-xl-5 col-lg-6">
+                <div class="single-product-content-wrapper">
+                    <div class="single-product-details">
+                        <h2 class="product-name">{{data.pname}}</h2>
+                        <div class="prices-stock-status d-flex align-items-center justify-content-between">
+                            <div class="prices-group">
+                                <span class="price">&#8377 {{data.price}}</span>
+                            </div>
+                            <span class="stock-status"><i class="dl-icon-check-circle1"></i> In  Stock</span>
+                        </div>
+                        <p class="product-desc">{{data.pdis}}
+                        <div class="quantity-btn-group d-flex">
+                            <div class="pro-qty">
+                                <input type="text" id="quantity" value="1"/>
+                            </div>
+                            <div class="list-btn-group">
+                                <a href="cart.html" class="btn btn-black">Add to Cart</a>
+                                <a href="wishlist.html" data-toggle="tooltip" data-placement="top"
+                                   title="Add to wishlist"><i class="dl-icon-heart2"></i></a>
+                                <a href="compare.html" data-toggle="tooltip" data-placement="top"
+                                   title="Add to Compare"><i class="dl-icon-compare2"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="find-store-delivery">
+                            <a href="#"><i class="fa fa-map-marker"></i> Find store near you</a>
+                            <a href="#"><i class="fa fa-exchange"></i> Delivery and return</a>
+                        </div>
+                    </div>
+
+                    <div class="product-description-review">
+                        <!-- Product Description Tab Menu -->
+                        <ul class="nav nav-tabs desc-review-tab-menu" id="desc-review-tab" role="tablist">
+                            <li>
+                                <a class="active" id="desc-tab" data-toggle="tab" href="#descriptionContent" role="tab">Description</a>
+                            </li>
+                            <li>
+                                <a id="profile-tab" data-toggle="tab" href="#reviewContent">Review</a>
+                            </li>
+                        </ul>
+                        <div class="tab-content" id="myTabContent">
+                            <div class="tab-pane fade show active" id="descriptionContent">
+                                <div class="description-content">
+                                    <p class="m-0">{{data.pdis}}
+                            </div>
+
+                            <div class="tab-pane fade" id="reviewContent">
+                                <div class="product-ratting-wrap">
+                                    <div class="pro-avg-ratting">
+                                        <h4>4.5 <span>(Overall)</span></h4>
+                                        <span>Based on 9 Comments</span>
+                                    </div>
+                                    <div class="rattings-wrapper">
+
+                                        <div class="sin-rattings">
+                                            <div class="ratting-author">
+                                                <h3>Cristopher Lee</h3>
+                                                <div class="ratting-star">
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <span>(5)</span>
+                                                </div>
+                                            </div>
+                                            <p>enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit,
+                                                sed quia res eos qui ratione voluptatem sequi Neque porro quisquam est,
+                                                qui dolorem ipsum quia dolor sit amet, consectetur, adipisci veli</p>
+                                        </div>
+
+                                        <div class="sin-rattings">
+                                            <div class="ratting-author">
+                                                <h3>Nirob Khan</h3>
+                                                <div class="ratting-star">
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <span>(5)</span>
+                                                </div>
+                                            </div>
+                                            <p>enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit,
+                                                sed quia res eos qui ratione voluptatem sequi Neque porro quisquam est,
+                                                qui dolorem ipsum quia dolor sit amet, consectetur, adipisci veli</p>
+                                        </div>
+
+                                        <div class="sin-rattings">
+                                            <div class="ratting-author">
+                                                <h3>MD.ZENAUL ISLAM</h3>
+                                                <div class="ratting-star">
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <span>(5)</span>
+                                                </div>
+                                            </div>
+                                            <p>enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit,
+                                                sed quia res eos qui ratione voluptatem sequi Neque porro quisquam est,
+                                                qui dolorem ipsum quia dolor sit amet, consectetur, adipisci veli</p>
+                                        </div>
+
+                                    </div>
+                                    <div class="ratting-form-wrapper">
+                                        <h3>Add your Reviews</h3>
+                                        <form action="#" method="post">
+                                            <div class="ratting-form row">
+                                                <div class="col-12 mb-16">
+                                                    <h5>Rating:</h5>
+                                                    <div class="ratting-star fix">
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6 col-12 mb-10">
+                                                    <label for="name">Name:</label>
+                                                    <input id="name" placeholder="Name" type="text">
+                                                </div>
+                                                <div class="col-md-6 col-12 mb-10">
+                                                    <label for="email">Email:</label>
+                                                    <input id="email" placeholder="Email" type="text">
+                                                </div>
+                                                <div class="col-12">
+                                                    <label for="your-review">Your Review:</label>
+                                                    <textarea name="review" id="your-review"
+                                                              placeholder="Write a review"></textarea>
+                                                </div>
+                                                <div class="col-12 mt-22">
+                                                    <button class="btn btn-black">Submit</button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+            </div>
+        </div>
+    </div>
+</div>                   
+
+{% endblock %}

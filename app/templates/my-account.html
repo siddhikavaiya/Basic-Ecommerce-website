@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block body %}
+    
+<!-- Start My Account Wrapper -->
+<div id="my-account-page-wrapper" class="pt-88 pt-md-58 pt-sm-48 pb-50 pb-md-20 pb-sm-10">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <img src="{{user_info.image.url}}" height="400px">
+            </div>
+
+            <div class="col-md-6">
+                <!-- Start Register Area Wrapper -->
+                <div class="my-account-item-wrapper mt-sm-34">
+                    <h3>User Information</h3>
+                    <p>Name: {{user_info.fname}}  {{user_info.lname}}</p>
+                    <p>Phone: {{user_info.phone}}  </p>
+                    <p>Email: {{user_info.email}}  </p>
+                    <p>Address: {{user_info.address}}  </p>
+                </div>
+                
+                <button type="button" class="btn btn-dark" ><a href="{% url 'editprofile' user.id %}" >Edit user Profile</a></button>
+                <!-- End Register Area Wrapper -->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End My Account Wrapper -->
+
+{% endblock body %}

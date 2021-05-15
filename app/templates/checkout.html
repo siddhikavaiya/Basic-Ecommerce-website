@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block body %}
+
+<!--== Start Checkout Page Wrapper ==-->
+<div id="checkout-page-wrapper" class="pt-90 pt-md-60 pt-sm-50 pb-50 pb-md-20 pb-sm-10">
+    <div class="container">
+        
+
+        <div class="row">
+            <div class="col-md-6">
+                <!-- Checkout Form Area Start -->
+                <div class="checkout-billing-details-wrap">
+                    <h2>Billing Details</h2>
+                    <div class="billing-form-wrap">
+                        <form method="POST" >
+                            {% csrf_token %}
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="single-input-item">
+                                        <label for="f_name" class="required">First Name</label>
+                                        <input type="text" id="fname" name='fname' placeholder="First Name" required/>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="single-input-item">
+                                        <label for="l_name" class="required">Last Name</label>
+                                        <input type="text" id="lname" name='lname' placeholder="Last Name" required/>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="single-input-item">
+                                <label for="email" class="required">Email Address</label>
+                                <input type="email" id="email" name='email' placeholder="Email Address" required/>
+                            </div>
+
+                            <div class="single-input-item">
+                                <label for="phone">Phone</label>
+                                <input type="text" id="phone" name="phone" placeholder="Phone"/>
+                            </div>
+                            
+                            <div class="single-input-item">
+                                <label for="date">Date</label>
+                                <input type="date" id="date" name="date" placeholder="Date"/>
+                            </div>
+
+
+                            <div class="single-input-item">
+                                <label for="country" class="required">Country</label>
+                                <input type="text" id="Country" name="country" placeholder="country" required/>
+                            </div>
+
+                            <div class="single-input-item">
+                                <label for="street-address" class="required">Street address</label>
+                                <input type="text" id="address" name="address" placeholder="Street address Line 1" required/>
+                            </div>
+
+                            <div class="single-input-item">
+                                <label for="town" class="required">Town / City</label>
+                                <input type="text" id="city" name="city" placeholder="Town / City" required/>
+                            </div>
+
+                            <div class="single-input-item">
+                                <label for="state">State / Divition</label>
+                                <input type="text" id="state" name="state" placeholder="State / Divition"/>
+                            </div>
+
+                            <div class="single-input-item">
+                                <label for="postcode" class="required">Postcode / ZIP</label>
+                                <input type="text" id="postcode" name="pincode" placeholder="Postcode / ZIP" required/>
+                            </div>
+
+                            
+                            <button type="submit" class="btn btn-dark">Dark</button> 
+                           
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div> 
+{% endblock %}
